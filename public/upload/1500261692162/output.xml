@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170717 11:21:32.287" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/prinswu/IdeaProjects/SeleniumWeb/1500261692162/case5.robot" id="s1" name="Case5">
+<test id="s1-t1" name="case1">
+<kw name="MyTest">
+<arguments>
+<arg>@</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8080/SeleniumWeb/account/search</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20170717 11:21:32.398" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/SeleniumWeb/account/search'</msg>
+<status status="PASS" endtime="20170717 11:21:34.428" starttime="20170717 11:21:32.398"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170717 11:21:34.692" starttime="20170717 11:21:34.428"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${InputText_id__email}</arg>
+</arguments>
+<msg timestamp="20170717 11:21:34.693" level="INFO">Typing text '@' into text field 'id=email'</msg>
+<status status="PASS" endtime="20170717 11:21:34.802" starttime="20170717 11:21:34.692"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=searchBtn</arg>
+</arguments>
+<msg timestamp="20170717 11:21:34.802" level="INFO">Clicking button 'id=searchBtn'.</msg>
+<status status="PASS" endtime="20170717 11:21:35.111" starttime="20170717 11:21:34.802"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170717 11:21:35.112" starttime="20170717 11:21:35.112"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-{index}.png</arg>
+</arguments>
+<msg timestamp="20170717 11:21:36.373" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170717 11:21:36.373" starttime="20170717 11:21:35.112"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170717 11:21:37.443" starttime="20170717 11:21:36.373"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:21:37.444" starttime="20170717 11:21:32.398"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:21:37.444" critical="yes" starttime="20170717 11:21:32.397"></status>
+</test>
+<test id="s1-t2" name="case2">
+<kw name="MyTest">
+<arguments>
+<arg>org</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8080/SeleniumWeb/account/search</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20170717 11:21:37.446" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/SeleniumWeb/account/search'</msg>
+<status status="PASS" endtime="20170717 11:21:42.449" starttime="20170717 11:21:37.446"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170717 11:21:43.695" starttime="20170717 11:21:42.450"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${InputText_id__email}</arg>
+</arguments>
+<msg timestamp="20170717 11:21:43.696" level="INFO">Typing text 'org' into text field 'id=email'</msg>
+<status status="PASS" endtime="20170717 11:21:46.822" starttime="20170717 11:21:43.695"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=searchBtn</arg>
+</arguments>
+<msg timestamp="20170717 11:21:46.823" level="INFO">Clicking button 'id=searchBtn'.</msg>
+<status status="PASS" endtime="20170717 11:21:52.015" starttime="20170717 11:21:46.822"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170717 11:21:52.015" starttime="20170717 11:21:52.015"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-{index}.png</arg>
+</arguments>
+<msg timestamp="20170717 11:21:53.263" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170717 11:21:53.264" starttime="20170717 11:21:52.016"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170717 11:21:54.330" starttime="20170717 11:21:53.264"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:21:54.330" starttime="20170717 11:21:37.445"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:21:54.330" critical="yes" starttime="20170717 11:21:37.445"></status>
+</test>
+<test id="s1-t3" name="case3">
+<kw name="MyTest">
+<arguments>
+<arg>com</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8080/SeleniumWeb/account/search</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20170717 11:21:54.333" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/SeleniumWeb/account/search'</msg>
+<status status="PASS" endtime="20170717 11:21:59.317" starttime="20170717 11:21:54.333"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170717 11:22:00.564" starttime="20170717 11:21:59.318"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${InputText_id__email}</arg>
+</arguments>
+<msg timestamp="20170717 11:22:00.565" level="INFO">Typing text 'com' into text field 'id=email'</msg>
+<status status="PASS" endtime="20170717 11:22:03.694" starttime="20170717 11:22:00.564"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=searchBtn</arg>
+</arguments>
+<msg timestamp="20170717 11:22:03.694" level="INFO">Clicking button 'id=searchBtn'.</msg>
+<status status="PASS" endtime="20170717 11:22:08.895" starttime="20170717 11:22:03.694"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170717 11:22:08.896" starttime="20170717 11:22:08.895"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>filename=selenium-screenshot-{index}.png</arg>
+</arguments>
+<msg timestamp="20170717 11:22:10.148" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170717 11:22:10.148" starttime="20170717 11:22:08.896"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170717 11:22:11.209" starttime="20170717 11:22:10.149"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:22:11.210" starttime="20170717 11:21:54.332"></status>
+</kw>
+<status status="PASS" endtime="20170717 11:22:11.210" critical="yes" starttime="20170717 11:21:54.331"></status>
+</test>
+<status status="PASS" endtime="20170717 11:22:11.211" starttime="20170717 11:21:32.291"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Case5" pass="3">Case5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
