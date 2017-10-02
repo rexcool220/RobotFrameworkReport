@@ -68,8 +68,7 @@ class reportController extends Controller
                 $result = "false";
             }
 
-            reportController::report($destination_path . $dir . "/output.xml");
-            $result = "pass";
+            $result = reportController::report($destination_path . $dir . "/output.xml");
         } else {
             return view('processFile/result');
             $result = "false";
@@ -180,7 +179,7 @@ class reportController extends Controller
                     );
                 }
             }
-
+        return $suiteLastInsertId;
 
         }
     }
