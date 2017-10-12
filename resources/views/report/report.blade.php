@@ -82,7 +82,7 @@
     <!-- /.col-sm-12 -->
     <div class="col-sm-12">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
             @component('admin.widgets.panel')
                 @slot('panelTitle', 'All Test')
                 @slot('panelBody')
@@ -90,7 +90,7 @@
                 @endslot
             @endcomponent
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 @component('admin.widgets.panel')
                     @slot('panelTitle', 'All Test')
                     @slot('panelBody')
