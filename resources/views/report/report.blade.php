@@ -276,10 +276,21 @@
                     ?>
                 ]
             };
+            var options = {
+                // All of my other bar chart option here
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
             var ctx = document.getElementById("allTests").getContext('2d');
             var allTests = new Chart(ctx, {
                 type: 'bar',
                 data: data,
+                options: options
             });
         }
     </script>
