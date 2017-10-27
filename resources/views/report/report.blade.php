@@ -92,7 +92,7 @@
             </div>
             <div class="col-sm-6">
                 @component('admin.widgets.panel')
-                    @slot('panelTitle', 'All Test')
+                    @slot('panelTitle', 'failRate Test')
                     @slot('panelBody')
                         <canvas id="failRate"></canvas>
                     @endslot
@@ -236,16 +236,41 @@
                         $data = substr($data, 0, -1);
                         $data = $data . "],";
                         echo $data;
-                        $colorPool = array("#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#ff6384", "#36a2eb", "#cc65fe");
-                        $backGroundColor = "backgroundColor: [";
-                        for ($i = 0; $i < count($array); $i++) {
-                            $backGroundColor = $backGroundColor . "\"" . $colorPool[$i % count($colorPool)] . "\",";
-                        }
-                        $backGroundColor = substr($backGroundColor, 0, -1);
-                        $backGroundColor = $backGroundColor . "]";
-                        echo $backGroundColor;
                     ?>
-                }],
+                    backgroundColor: "#FC9775",
+                    label: "Total"
+                },{
+                    <?php
+                        $passedData = array();
+                    foreach ($tests as $test) {
+                        foreach ($test['kws'] as $kw) {
+                            foreach ($kw['kwDetails'] as $kwDetail) {
+                                if($kwDetail['status'] == 1)
+                                {
+                                    if (array_key_exists($kwDetail['name'], $passedData) == true) {
+                                        $passedData[$kwDetail['name']]++;
+                                    } else {
+                                        $passedData[$kwDetail['name']] = 1;
+                                    }
+                                }
+                                else{
+                                    $passedData[$kwDetail['name']] = 0;
+                                }
+                            }
+                        }
+                    }
+                    $data = "data: [";
+                    foreach ($passedData as $key => $value) {
+                        $data = $data . $value . ",";
+                    }
+                    $data = substr($data, 0, -1);
+                    $data = $data . "],";
+                    echo $data;
+                    ?>
+                    backgroundColor: "#5A69A6",
+                    label: "Passed"
+                }
+                ],
 
                 // These labels appear in the legend and in the tooltips when hovering different arcs
                 labels: [
@@ -261,7 +286,7 @@
             };
             var ctx = document.getElementById("allTests").getContext('2d');
             var allTests = new Chart(ctx, {
-                type: 'pie',
+                type: 'bar',
                 data: data,
             });
 
