@@ -82,21 +82,13 @@
     <!-- /.col-sm-12 -->
     <div class="col-sm-12">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
             @component('admin.widgets.panel')
-                @slot('panelTitle', 'All Test')
+                @slot('panelTitle', 'Test Summary')
                 @slot('panelBody')
                     <canvas id="allTests"></canvas>
                 @endslot
             @endcomponent
-            </div>
-            <div class="col-sm-6">
-                @component('admin.widgets.panel')
-                    @slot('panelTitle', 'failRate Test')
-                    @slot('panelBody')
-                        <canvas id="failRate"></canvas>
-                    @endslot
-                @endcomponent
             </div>
         </div>
         <div class="row">
@@ -289,69 +281,6 @@
                 type: 'bar',
                 data: data,
             });
-
-
-            var failRateData = {
-                datasets: [{
-                    <?php
-                    $failRateArray = array();
-                    foreach ($tests as $test) {
-                        foreach ($test['kws'] as $kw) {
-                            foreach ($kw['kwDetails'] as $kwDetail) {
-                                if ($kwDetail['status'] == 1) {
-                                    if (array_key_exists('pass', $failRateArray) == true) {
-                                        $failRateArray['pass']++;
-                                    } else {
-                                        $failRateArray['pass'] = 1;
-                                    }
-                                } else {
-                                    if (array_key_exists($kwDetail['name'], $failRateArray) == true) {
-                                        $failRateArray[$kwDetail['name']]++;
-                                    } else {
-                                        $failRateArray[$kwDetail['name']] = 1;
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-                    $failRateData = "data: [";
-                    foreach ($failRateArray as $key => $value) {
-                        $failRateData = $failRateData . $value . ",";
-                    }
-                    $failRateData = substr($failRateData, 0, -1);
-                    $failRateData = $failRateData . "],";
-                    echo $failRateData;
-                    $colorPool = array("#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#ff6384", "#36a2eb", "#cc65fe");
-                    $backGroundColor = "backgroundColor: [";
-                    for ($i = 0; $i < count($failRateArray); $i++) {
-                        $backGroundColor = $backGroundColor . "\"" . $colorPool[$i % count($colorPool)] . "\",";
-                    }
-                    $backGroundColor = substr($backGroundColor, 0, -1);
-                    $backGroundColor = $backGroundColor . "]";
-                    echo $backGroundColor;
-                    ?>
-                }],
-
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    <?php
-                    $failRateLabel = "";
-                    foreach ($failRateArray as $key => $value) {
-                        $failRateLabel = $failRateLabel . "'" . $key . "',";
-                    }
-                    $failRateLabel = substr($failRateLabel, 0, -1);
-                    echo $failRateLabel;
-                    ?>
-                ]
-            };
-            var ctx = document.getElementById("failRate").getContext('2d');
-            var allTests = new Chart(ctx, {
-                type: 'pie',
-                data: failRateData,
-            });
-
-
         }
     </script>
 @endsection
