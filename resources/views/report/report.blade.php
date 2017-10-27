@@ -246,7 +246,9 @@
                                     }
                                 }
                                 else{
-                                    $passedData[$kwDetail['name']] = 0;
+                                    if (array_key_exists($kwDetail['name'], $passedData) == false) {
+                                        $passedData[$kwDetail['name']] = 0;
+                                    }
                                 }
                             }
                         }
