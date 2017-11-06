@@ -1,6 +1,6 @@
 @extends('admin.layouts.dashboard')
 
-@section('page_heading','Report')
+@section('page_heading','報告')
 @section('section')
 
     <!-- /.row -->
@@ -14,10 +14,14 @@
                                 <i class="fa fa-thumbs-o-up fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">{{$suite[0]['allTestsFail'] > 0 ? 'Fail' : 'Pass'}}</div>
-                                <div>Status</div>
+                                <div class="huge">{{$suite[0]['allTestsFail'] > 0 ? '未通過' : '通過'}}</div>
+                                <div>狀態</div>
                             </div>
                         </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">測試結果</span>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -34,12 +38,16 @@
                                     $datetime1 = DateTime::createFromFormat('Ymd H:i:s.u', $suite[0]['startTime']);
                                     $datetime2 = DateTime::createFromFormat('Ymd H:i:s.u', $suite[0]['endTime']);
                                     $diffInSeconds = $datetime2->getTimestamp() - $datetime1->getTimestamp();
-                                    echo $diffInSeconds . " Sec";
+                                    echo $diffInSeconds . " 秒";
                                     ?>
                                 </div>
-                                <div>Elapsed Time</div>
+                                <div>花費時間</div>
                             </div>
                         </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">測試花費時間</span>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -54,9 +62,13 @@
                                 <div class="huge">
                                     {{$suite[0]['allTestsFail']}}
                                 </div>
-                                <div>Fail Count</div>
+                                <div>失敗次數</div>
                             </div>
                         </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">測試失敗次數</span>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -69,11 +81,15 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    {{$suite[0]['error'] == "\n" ? 'No error' : $suite[0]['error']}}
+                                    {{$suite[0]['error'] == "\n" ? '無錯誤發生' : $suite[0]['錯誤發生']}}
                                 </div>
-                                <div>Error</div>
+                                <div>錯誤</div>
                             </div>
                         </div>
+                    </div>
+                    <div class="panel-footer">
+                        <span class="pull-left">測試是否發生例外錯誤</span>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -84,7 +100,7 @@
         <div class="row">
             <div class="col-sm-12">
             @component('admin.widgets.panel')
-                @slot('panelTitle', 'Test Summary')
+                @slot('panelTitle', '測試總結')
                 @slot('panelBody')
                     <canvas id="allTests"></canvas>
                 @endslot
@@ -281,8 +297,15 @@
             var options = {
                 // All of my other bar chart option here
                 scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontSize: 20
+                        }
+                    }],
                     yAxes: [{
                         ticks: {
+                            mine: 0,
+                            stepSize: 1,
                             beginAtZero:true
                         }
                     }]
