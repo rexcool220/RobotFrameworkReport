@@ -1,6 +1,6 @@
 @extends('admin.layouts.dashboard')
 
-@section('page_heading','報告')
+@section('page_heading','功能測試結果報告(Keyword driven testing)')
 @section('section')
 
     <!-- /.row -->
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <span class="pull-left">測試結果</span>
+                        <span class="pull-left">本次功能測試通過結果</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <span class="pull-left">測試是否發生例外錯誤</span>
+                        <span class="pull-left">測試期間是否發生例外錯誤</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -306,7 +306,8 @@
                         ticks: {
                             mine: 0,
                             stepSize: 1,
-                            beginAtZero:true
+                            beginAtZero:true,
+                            fontSize: 20
                         }
                     }]
                 }
